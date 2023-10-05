@@ -20,71 +20,73 @@ args = {
 	'y1': -2e-2,			    # bounding box
 	'y2': 2e-2,			        # bounding box
 	'z2': 10e-2,			    # bounding box
-	'dt': 1e-6,     # simulation
-	'frames': 1500,  # simulation
+	'dt': 2e-6,     # simulation
+	'frames': 500,  # simulation
 }
 
 
-name = 'sweep20230507_0/balanced_acute_6Gcm_10x'
-args['save'] = name
+# name = '/Users/lucaswang/Desktop/Semeghini/sim-saves/test2'
+# args['save'] = name
 
 
-# Yb 556
-gamma = 182e3
-S = 1600
-Delta = -14*gamma
-g = 1.5
-lam = 556e-9
-w0 = 0.5e-2
+# # Yb 556
+# gamma = 182e3
+# S = 1600
+# Delta = -14*gamma
+# g = 1.5
+# lam = 556e-9
+# w0 = 0.5e-2
 
-beams = []
+# beams = []
+# # b = Beam(origin = (0,0,5e-2), n = (1,0,0), 
+# # 	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 4*0.01)
+# # beams.append(b)
+# # b = Beam(origin = (0,0,5e-2), n = (-1,0,0), 
+# # 	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 4*0.01)
+# # beams.append(b)
+# # b = Beam(origin = (0,0,5e-2), n = (0,1,0), 
+# # 	     lam = lam, w0 = w0/5, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 8*0.01)
+# # beams.append(b)
+# # b = Beam(origin = (0,0,5e-2), n = (0,-1,0), 
+# # 	     lam = lam, w0 = w0/5, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 8*0.01)
+# # beams.append(b)
+# # b = Beam(origin = (0,0,5e-2), n = (0,0,1), 
+# # 	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 4*0.01)
+# # beams.append(b)
+# # b = Beam(origin = (0,0,5e-2), n = (0,0,-1), 
+# # 	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 4*0.01)
+# # beams.append(b)
+
+# b = Beam(origin = (0,0,5e-2), n = (0,1,np.sqrt(3)), 
+# 	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 6*0.01)
+# beams.append(b)
+# b = Beam(origin = (0,0,5e-2), n = (0,-1,-np.sqrt(3)), 
+# 	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 6*0.01)
+# beams.append(b)
+
 # b = Beam(origin = (0,0,5e-2), n = (1,0,0), 
-# 	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 4*0.01)
+# 	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 12*0.01)
 # beams.append(b)
 # b = Beam(origin = (0,0,5e-2), n = (-1,0,0), 
-# 	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 4*0.01)
-# beams.append(b)
-# b = Beam(origin = (0,0,5e-2), n = (0,1,0), 
-# 	     lam = lam, w0 = w0/5, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 8*0.01)
-# beams.append(b)
-# b = Beam(origin = (0,0,5e-2), n = (0,-1,0), 
-# 	     lam = lam, w0 = w0/5, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 8*0.01)
-# beams.append(b)
-# b = Beam(origin = (0,0,5e-2), n = (0,0,1), 
-# 	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 4*0.01)
-# beams.append(b)
-# b = Beam(origin = (0,0,5e-2), n = (0,0,-1), 
-# 	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 4*0.01)
+# 	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 12*0.01)
 # beams.append(b)
 
-b = Beam(origin = (0,0,5e-2), n = (0,1,np.sqrt(3)), 
-	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 6*0.01)
-beams.append(b)
-b = Beam(origin = (0,0,5e-2), n = (0,-1,-np.sqrt(3)), 
-	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 6*0.01)
-beams.append(b)
+# b = Beam(origin = (0,0,5e-2), n = (0,1,-np.sqrt(3)), 
+# 	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 6*0.01)
+# beams.append(b)
+# b = Beam(origin = (0,0,5e-2), n = (0,-1,np.sqrt(3)), 
+# 	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 6*0.01)
+# beams.append(b)
 
-b = Beam(origin = (0,0,5e-2), n = (1,0,0), 
-	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 12*0.01)
-beams.append(b)
-b = Beam(origin = (0,0,5e-2), n = (-1,0,0), 
-	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 12*0.01)
-beams.append(b)
+# args['beams'] = beams
 
-b = Beam(origin = (0,0,5e-2), n = (0,1,-np.sqrt(3)), 
-	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 6*0.01)
-beams.append(b)
-b = Beam(origin = (0,0,5e-2), n = (0,-1,np.sqrt(3)), 
-	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 6*0.01)
-beams.append(b)
+# box = MOTSim.simulate(args)
 
-args['beams'] = beams
+# # box = BoundingBox.load(name)
 
-box = MOTSim.simulate(args)
+# box.animate_xyz_beams_sphereaperture(center=(0,0,5e-2), radius=0.5e-3, save=f'{name}')
 
-# box = BoundingBox.load(name)
-
-box.animate_xyz_beams_sphereaperture(center=(0,0,5e-2), radius=0.5e-3, save=f'{name}')
+#########
 
 # args = {
 # 	'mass': 174,
@@ -129,54 +131,57 @@ box.animate_xyz_beams_sphereaperture(center=(0,0,5e-2), radius=0.5e-3, save=f'{n
 # start = int(sys.argv[1])
 # end = int(sys.argv[2])
 
-# for Bp in np.linspace(0,75,25)[start:end]:
-# 	Bp = Bp*0.01
-# 	for Delta in np.linspace(0,3,20):
-# 		# Yb 399
-# 		# w0 = 0.5e-2
-# 		# gamma = 28e6
-# 		# S = 0.043
-# 		# Delta = -Delta*gamma
-# 		# g = 1
-# 		# lam = 399e-9		
+for Bp in np.linspace(0,75,10):
+	Bp = Bp*0.01
+	for Delta in np.linspace(0,3,10):
+		# Yb 399
+		w0 = 0.5e-2
+		gamma = 28e6
+		S = 0.043
+		Delta = -Delta*gamma
+		g = 1
+		lam = 399e-9		
 
-# 		# Rb 780
-# 		w0 = 0.5e-2
-# 		gamma = 36.1e6
-# 		S = 2
-# 		Delta = -Delta*gamma
-# 		g = 1
-# 		lam = 780e-9
+		# Rb 780
+		# w0 = 0.5e-2
+		# gamma = 36.1e6
+		# S = 2
+		# Delta = -Delta*gamma
+		# g = 1
+		# lam = 780e-9
 
-# 		beams = []
+		beams = []
 
-# 		b = Beam(origin = (0,0,5e-2), n = (1,0,0), 
-# 			     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = Bp)
-# 		beams.append(b)
-# 		b = Beam(origin = (0,0,5e-2), n = (-1,0,0), 
-# 			     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = Bp)
-# 		beams.append(b)
-# 		b = Beam(origin = (0,0,5e-2), n = (0,1,0), 
-# 			     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = Bp)
-# 		beams.append(b)
-# 		b = Beam(origin = (0,0,5e-2), n = (0,-1,0), 
-# 			     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = Bp)
-# 		beams.append(b)
+		b = Beam(origin = (0,0,5e-2), n = (0,1,np.sqrt(3)), 
+	     lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 6*0.01)
+		beams.append(b)
+		b = Beam(origin = (0,0,5e-2), n = (0,-1,-np.sqrt(3)), 
+				lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 6*0.01)
+		beams.append(b)
 
-# 		# push beam
-# 		b = Beam(origin = (0,0,0), n = (0,0,1), 
-# 			     lam = lam, w0 = 0.5e-2, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 0)
-# 		beams.append(b)
+		b = Beam(origin = (0,0,5e-2), n = (1,0,0), 
+				lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 12*0.01)
+		beams.append(b)
+		b = Beam(origin = (0,0,5e-2), n = (-1,0,0), 
+				lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 12*0.01)
+		beams.append(b)
 
-# 		args['beams'] = beams
+		b = Beam(origin = (0,0,5e-2), n = (0,1,-np.sqrt(3)), 
+				lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 6*0.01)
+		beams.append(b)
+		b = Beam(origin = (0,0,5e-2), n = (0,-1,np.sqrt(3)), 
+				lam = lam, w0 = w0, gamma = gamma, S = S, Delta = Delta, g = g, Bp = 6*0.01)
+		beams.append(b)
+
+		args['beams'] = beams
 
 
-# 		name = f'sweep20230419/780_{Bp*100:.2f}G_{Delta/gamma:.2f}_0.5w0_push'
-# 		args['save'] = name
+		name = f'/Users/lucaswang/Desktop/Semeghini/sim-saves/sweep20231005/399_{Bp*100:.2f}G_{Delta/gamma:.2f}'
+		args['save'] = name
 
-# 		print(name)
+		print(name)
 
-# 		box = MOTSim.simulate(args)
+		box = MOTSim.simulate(args)
 
 # simulate
 # box.simulate(dt=2e-6, frames=250, cooling=True, save=f'out/{name}')
